@@ -3,7 +3,7 @@
   "version": "0.0.50",
   "scripts": {
     "install-extensions": "npm i --prefix=fs-provider && npm i --prefix=sample",
-    "compile": "tsc -p ./ && npm run compile-fs-provider",
+    "compile": "npm run install-extensions && tsc -p ./ && npm run compile-fs-provider",
     "watch": "tsc -w -p ./",
     "prepack": "npm run compile",
     "test": "eslint src --ext ts && tsc --noEmit",
