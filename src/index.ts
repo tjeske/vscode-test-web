@@ -291,7 +291,7 @@ async function openBrowser(endpoint: string, options: Options, configPage?: (pag
 
 	const headless = options.headless ?? options.extensionTestsPath !== undefined;
 
-	const browser = await browserType.launch({ headless, args, devtools: options.devTools, env: {'DMD': '1'} });
+	const browser = await browserType.launch({ headless, args, devtools: options.devTools, env: {'DMD': '1'}, firefoxUserPrefs: {"DMD": 1} });
 	const context = await browser.newContext({ viewport: null });
 	if (options.permissions) {
 		context.grantPermissions(options.permissions);
